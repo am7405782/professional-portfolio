@@ -202,7 +202,16 @@
                         solutions and exceptional user experiences.</p>
                     <div class="underline"></div>
                 </div>
-                <div class="projects-grid">
+
+                <div class="projects-filter" id="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="published">Published</button>
+                    <button class="filter-btn" data-filter="internal">Internal</button>
+                </div>
+
+                <p class="projects-count" id="projects-count"></p>
+
+                <div class="projects-grid" id="projects-grid">
                     <!-- Projects are dynamically loaded from script.js -->
                 </div>
             </div>
