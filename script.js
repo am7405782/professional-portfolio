@@ -1,21 +1,28 @@
 // Navbar Scroll Effect
+const nav = document.querySelector('.navbar');
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
 });
 
-// Reveal Animations on Scroll
-const revealOnScroll = () => {
-    const elements = document.querySelectorAll('.reveal, .scroll-reveal');
-    elements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (elementTop < windowHeight - 100) {
+// Reveal Animations on Scroll (Performance Optimized via IntersectionObserver)
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
             el.classList.add('active');
 
             // Special handling for skills-group staggered cards
@@ -26,11 +33,22 @@ const revealOnScroll = () => {
                     setTimeout(() => card.classList.add('active'), 50);
                 });
             }
+            // Stop observing once animated
+            observer.unobserve(el);
         }
     });
+}, {
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.05
+});
+
+const revealOnScroll = () => {
+    const elements = document.querySelectorAll('.reveal:not(.active), .scroll-reveal:not(.active)');
+    elements.forEach(el => revealObserver.observe(el));
 };
 
-window.addEventListener('scroll', revealOnScroll);
+// Initialize once
+revealOnScroll();
 
 // Theme Management System
 const themeBtn = document.getElementById('theme-btn');
