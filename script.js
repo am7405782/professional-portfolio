@@ -50,6 +50,28 @@ const revealOnScroll = () => {
 // Initialize once
 revealOnScroll();
 
+// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const navLinksItems = document.querySelectorAll('.nav-links a');
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu when a link is clicked
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
 // Theme Management System
 const themeBtn = document.getElementById('theme-btn');
 const body = document.body;
@@ -161,8 +183,8 @@ const projects = [
     {
         title: "Siwaan | سيوان",
         subtitle: "Multi-Service Community Platform",
-        image: "image_project/siwaan/1.jpeg",
-        images: ["image_project/siwaan/1.jpeg", "image_project/siwaan/2.jpeg", "image_project/siwaan/3.jpeg", "image_project/siwaan/4.jpeg", "image_project/siwaan/5.jpeg", "image_project/siwaan/6.jpeg"],
+        image: "image_project/siwaan/logo.png",
+        images: ["image_project/siwaan/logo.png ", "image_project/siwaan/1.jpeg", "image_project/siwaan/2.jpeg", "image_project/siwaan/3.jpeg", "image_project/siwaan/4.jpeg", "image_project/siwaan/5.jpeg", "image_project/siwaan/6.jpeg"],
         description: "A comprehensive community platform designed to connect residents and provide essential services. Features a marketplace for grocery and food delivery from local vendors, golf cart transportation services for easy neighborhood mobility, and professional repair services for home maintenance needs. Users can interact through integrated chat and messaging, browse local news and ads, view community galleries, participate in forums, and book various services. Includes secure user wallet payments, community complaint management system, and instant notifications. Siwaan aims to improve community living standards by bringing all essential services and social interactions into one easy-to-use mobile app.",
         features: ["نظام محفظة رقمية للشحن والدفع", "طلب خدمات الصيانة المنزلية", "نظام تتبع الطلبات المباشر", "إدارة الشكاوى والاقتراحات"],
         technologies: ["Flutter", "Dart", "Firebase", "Google Maps SDK", "REST API", 'Clean Architecture', 'Dio', 'BLoC State Management', 'Team Collaboration'],
@@ -172,7 +194,7 @@ const projects = [
     {
         title: "Mostaqer | مستقر",
         subtitle: "Telemedicine & Consultations Platform",
-        image: "image_project/avc/1.jpeg",
+        image: "image_project/mostacr/logo.png",
         images: ["image_project/avc/1.jpeg", "image_project/avc/2.jpeg", "image_project/avc/3.jpeg", "image_project/avc/4.jpeg", "image_project/avc/5.jpeg"],
         description: "An integrated service platform that allows users to easily book medical consultations and healthcare services through a smart and secure app supporting video and voice conversations.",
         features: ["حجز مواعيد الاستشارات الطبية", "محادثات فيديو وصوت مباشرة", "إدارة الوصفات الطبية الرقمية", "نظام تقييم الأطباء والخدمات"],
@@ -184,7 +206,7 @@ const projects = [
     {
         title: "Torido ",
         subtitle: "Light Transport Logistics App",
-        image: "project_torido.png",
+        image: "image_project/torido/Screenshot 2026-04-27 at 10.26.19 PM.png",
         images: ["project_torido.png", "image_project/torido/Screenshot_1770725122.png", "image_project/torido/Screenshot_1770725124.png", "image_project/torido/Screenshot_1770725136.png", "image_project/torido/Screenshot_1770725140.png", "image_project/torido/Screenshot_1770725150.png"],
         description: "An app that connects customers with light transportation service providers to get the best rates easily and ensure shipments arrive quickly.",
         features: ["نظام تقديم عروض الأسعار", "تحديد الموقع الدقيق للتحميل والتفريغ", "دردشة داخل التطبيق", "سجل كامل للرحلات"],
@@ -202,7 +224,7 @@ const projects = [
         features: ["إسناد المهام للموظفين", "تتبع المواقع الجغرافية", "تقارير إنجاز دورية", "نظام تنبيهات فورية"],
         technologies: ["Flutter", "Dart", "Firebase Messaging", "Geolocator", "Dio"],
         googlePlay: "",
-        appStore: ""
+        appStore: "https://apps.apple.com/us/app/hawary-app/id6761829156"
     },
     {
         title: "Family ",
@@ -215,17 +237,17 @@ const projects = [
         googlePlay: "",
         appStore: ""
     },
-    {
-        title: "AVC",
-        subtitle: "Operations & Service Solutions",
-        image: "image_project/avc/1.jpeg",
-        images: ["image_project/avc/1.jpeg", "image_project/avc/2.jpeg", "image_project/avc/3.jpeg", "image_project/avc/4.jpeg", "image_project/avc/5.jpeg", "image_project/avc/6.jpeg"],
-        description: "Advanced technical solutions for managing operations and delivering high-quality professional services aimed at simplifying administrative procedures.",
-        features: ["إدارة سير العمل الرقمي", "تحليل البيانات والتقارير", "دعم فني مباشر", "إدارة المستخدمين والصلاحيات"],
-        technologies: ["Flutter", "REST API", "JSON Serialization", "Cubit"],
-        googlePlay: "",
-        appStore: ""
-    },
+    // {
+    //     title: "AVC",
+    //     subtitle: "Operations & Service Solutions",
+    //     image: "image_project/avc/1.jpeg",
+    //     images: ["image_project/avc/1.jpeg", "image_project/avc/2.jpeg", "image_project/avc/3.jpeg", "image_project/avc/4.jpeg", "image_project/avc/5.jpeg", "image_project/avc/6.jpeg"],
+    //     description: "Advanced technical solutions for managing operations and delivering high-quality professional services aimed at simplifying administrative procedures.",
+    //     features: ["إدارة سير العمل الرقمي", "تحليل البيانات والتقارير", "دعم فني مباشر", "إدارة المستخدمين والصلاحيات"],
+    //     technologies: ["Flutter", "REST API", "JSON Serialization", "Cubit"],
+    //     googlePlay: "",
+    //     appStore: ""
+    // },
 
 ];
 
