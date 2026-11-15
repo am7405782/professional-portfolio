@@ -3,431 +3,342 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ahmed Mohamed | Senior Flutter Developer</title>
+    <meta name="description" content="Ahmed Mohamed, Senior Flutter Developer in Cairo. Flutter apps for iOS and Android, live on the App Store and Google Play.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232557d6'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='38' font-weight='800' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Readex+Pro:wght@200..700&display=swap">
+    <link rel="stylesheet" href="style.css?v=7">
+    <script>
+  /* Runs before first paint: restore a saved theme and hold the hero intro. */
+  (function () {
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem('portfolio-theme');
+      if (!root.hasAttribute('data-theme') && (saved === 'light' || saved === 'dark')) root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && document.visibilityState !== 'hidden') {
+      root.classList.add('intro-pending');
+    }
+    root.classList.add('js');
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      var l = q || localStorage.getItem('portfolio-lang');
+      if (l === 'ar') { root.setAttribute('lang', 'ar'); root.setAttribute('dir', 'rtl'); }
+    } catch (e) {}
+  })();
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" async></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">PORTFOLIO<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="theme-toggle">
-                <button id="theme-btn" title="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Ahmed Mohamed, back to top" data-i18n="brand" data-i18n-aria="brand.aria">Ahmed Mohamed<span class="brand-dot" aria-hidden="true"></span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#work" data-section="work" data-i18n="nav.work">Work</a></li>
+        <li><a href="#about" data-section="about" data-i18n="nav.about">About</a></li>
+        <li><a href="#ai" data-section="ai" data-i18n="nav.ai">AI</a></li>
+        <li><a href="#toolkit" data-section="toolkit" data-i18n="nav.toolkit">Toolkit</a></li>
+        <li><a href="#contact" data-section="contact" data-i18n="nav.contact">Contact</a></li>
+        <li aria-hidden="true" class="nav-pill" id="nav-pill"></li>
+      </ul>
     </nav>
+    <div class="nav-actions">
+      <button class="icon-btn lang-btn" id="lang-btn" type="button" lang="ar" aria-label="عرض الموقع بالعربية"><span class="lang-label">ع</span></button>
+      <button class="icon-btn theme-btn" id="theme-btn" type="button" aria-label="Switch theme">
+        <span class="ico ico-moon"><i class="fa-solid fa-moon"></i></span>
+        <span class="ico ico-sun"><i class="fa-solid fa-sun"></i></span>
+      </button>
+      <a href="#contact" class="btn btn-primary btn-sm nav-hire" data-i18n="hire">Hire me</a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container hero-container">
+<div class="menu wrap" id="menu" hidden>
+  <ul class="menu-links">
+    <li><a href="#work" data-i18n="nav.work">Work</a></li>
+    <li><a href="#about" data-i18n="nav.about">About</a></li>
+    <li><a href="#ai" data-i18n="nav.ai">AI</a></li>
+    <li><a href="#toolkit" data-i18n="nav.toolkit">Toolkit</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+  </ul>
+  <div class="menu-foot">
+    <span dir="ltr">am7405782@gmail.com</span>
+    <div class="socials">
+      <a class="icon-btn" href="https://www.linkedin.com/in/ahmed-mohamed-aa1463352" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="ico"><i class="fa-brands fa-linkedin-in"></i></span></a>
+      <a class="icon-btn" href="https://github.com/am7405782" target="_blank" rel="noopener" aria-label="GitHub"><span class="ico"><i class="fa-brands fa-github"></i></span></a>
+      <a class="icon-btn" href="https://wa.me/201010657674" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="ico"><i class="fa-brands fa-whatsapp"></i></span></a>
+    </div>
+  </div>
+</div>
 
-                <div class="hero-content">
-                    <h1 class="hero-name reveal">
-                        Ahmed <span class="gradient-text">Mohamed</span>
-                    </h1>
-
-                    <h3 class="hero-subtitle reveal">
-                        I build scalable Flutter apps that users love and businesses rely on.
-                    </h3>
-
-                    <p class="hero-bio reveal">
-                        I'm <span class="highlight">Senior Flutter Developer</span> with 3+ years of experience
-                        delivering <span class="highlight">high-performance mobile applications</span>.
-                        <br><br>
-                        I specialize in <span class="highlight">Clean Architecture (BLoC & Cubit)</span>,
-                        <span class="highlight">performance optimization</span>, and building scalable
-                        <span class="highlight">iOS & Android apps</span> that create real business impact.
-                    </p>
-
-                    <div class="hero-links-wrapper reveal">
-                        <div class="hero-main-links">
-                            <a href="#projects" class="btn btn-primary">
-                                View My Work <i class="fa-solid fa-arrow-right-long btn-icon"></i>
-                            </a>
-                            <a href="#contact" class="btn btn-outline">
-                                Hire Me
-                            </a>
-                        </div>
-
-                        <div class="social-minimal">
-                            <a href="https://www.linkedin.com/in/ahmed-mohamed-aa1463352" target="_blank"
-                                class="minimal-icon" title="LinkedIn">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/am7405782" target="_blank" class="minimal-icon" title="GitHub">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://wa.me/201010657674" target="_blank" class="minimal-icon" title="WhatsApp">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </a>
-                            <a href="YOUR_CV_LINK" target="_blank" class="cv-circle" title="Download CV">
-                                <i class="fa-solid fa-download"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero-image-container reveal">
-                    <div class="image-white-glow"></div>
-                    <div class="profile-circle">
-                        <img src="preson.jpeg" alt="Ahmed Mohamed" class="profile-img">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="scroll-dot">
-                <div class="dot"></div>
-            </div>
-        </section>
-
-        <section id="about" class="about section-padding">
-            <div class="container">
-
-                <div class="section-header reveal">
-                    <h2>About Me</h2>
-                    <p class="section-subtitle">
-                        Passionate about building scalable, high-quality mobile experiences
-                    </p>
-                    <div class="underline"></div>
-                </div>
-
-                <div class="about-grid">
-
-                    <!-- Left -->
-                    <div class="about-left scroll-reveal">
-                        <p class="bio-text">
-                            Flutter Developer with 3+ years of proven experience shipping 7+ production apps across
-                            diverse industries—e-commerce, social, health, and education. Specialized in Flutter, Dart,
-                            and Firebase, with a strong focus on clean architecture (BLoC & Cubit), performance
-                            optimization, and delivering scalable, business-driven mobile solutions.
-                            <br><br>
-                            I thrive in end-to-end ownership, taking projects from concept through deployment. Equally
-                            comfortable working solo or collaborating with teams. Passionate about writing clean,
-                            maintainable code and crafting beautiful, intuitive user experiences that drive real
-                            business impact.
-                        </p>
-
-                        <div class="info-grid">
-                            <div class="info-box">
-                                <span class="info-label">Location</span>
-                                <span class="info-value">Egypt 🇪🇬 | Open to Remote</span>
-                            </div>
-                            <div class="info-box">
-                                <span class="info-label">Experience</span>
-                                <span class="info-value">3+ Years</span>
-                            </div>
-
-                            <div class="info-box">
-                                <span class="info-label">Specialization</span>
-                                <span class="info-value">Flutter & Scalable Mobile Apps</span>
-                            </div>
-                            <div class="info-box">
-                                <span class="info-label">Approach</span>
-                                <span class="info-value">Clean Architecture, Agile & Best Practices</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right -->
-                    <div class="about-right scroll-reveal">
-
-                        <div class="feature-card">
-                            <div class="feature-icon">🚀</div>
-                            <div>
-                                <h3>Proven Impact</h3>
-                                <p>Delivered 9+ production apps with scalable architecture and strong performance</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-card">
-                            <div class="feature-icon">📱</div>
-                            <div>
-                                <h3>Cross-Platform Expertise</h3>
-                                <p>Building high-quality iOS & Android apps from a single codebase using Flutter</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-card">
-                            <div class="feature-icon">⚙️</div>
-                            <div>
-                                <h3>Scalable Architecture</h3>
-                                <p>Applying BLoC, clean architecture, and modular design for long-term maintainability
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="feature-card">
-                            <div class="feature-icon">👥</div>
-                            <div>
-                                <h3>Leadership & Ownership</h3>
-                                <p>Leading features end-to-end, mentoring developers, and driving code quality standards
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <section id="projects" class="projects section-padding">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Featured Work</h2>
-                    <p class="section-subtitle">A collection of premium mobile applications delivering innovative
-                        solutions and exceptional user experiences.</p>
-                    <div class="underline"></div>
-                </div>
-
-                <div class="projects-filter" id="projects-filter">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="published">Published</button>
-                    <button class="filter-btn" data-filter="internal">Internal</button>
-                </div>
-
-                <p class="projects-count" id="projects-count"></p>
-
-                <div class="projects-grid" id="projects-grid">
-                    <!-- Projects are dynamically loaded from script.js -->
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Technical Skills</h2>
-                    <div class="underline"></div>
-                    <p class="section-subtitle">Technologies and tools I use to build scalable, high-performance
-                        applications</p>
-                </div>
-
-                <div class="skills-wrapper">
-
-                    <!-- Mobile -->
-                    <div class="skills-group scroll-reveal">
-                        <h3 class="group-title">Mobile Development</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon">📱</div>
-                                <span>Flutter (Expert)</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🎯</div>
-                                <span>Dart (Advanced)</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">📦</div>
-                                <span>BLoC / Cubit</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">⚡</div>
-                                <span>Performance Optimization</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🤖</div>
-                                <span>Android (Integration)</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🍎</div>
-                                <span>iOS (Integration)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Architecture -->
-                    <div class="skills-group scroll-reveal">
-                        <h3 class="group-title">Architecture & Engineering</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon">🏗️</div>
-                                <span>Clean Architecture</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🧩</div>
-                                <span>Modular Architecture</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🔄</div>
-                                <span>State Management Design</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🧪</div>
-                                <span>Code Quality & Best Practices</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Backend -->
-                    <div class="skills-group scroll-reveal">
-                        <h3 class="group-title">Backend & Services</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon">🔥</div>
-                                <span>Firebase (Auth, Firestore, FCM)</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🌐</div>
-                                <span>REST APIs Integration</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">☁️</div>
-                                <span>Google Cloud</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🗄️</div>
-                                <span>SQL & NoSQL Databases</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🎥</div>
-                                <span>Agora (Video & RTC)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tools -->
-                    <div class="skills-group scroll-reveal">
-                        <h3 class="group-title">Tools & Workflow</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon">📝</div>
-                                <span>Git & Version Control</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🐙</div>
-                                <span>GitHub</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">⚡</div>
-                                <span>Agile & Scrum</span>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon">🚀</div>
-                                <span>CI/CD Basics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact section-padding">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Let's Connect</h2>
-                    <p class="section-subtitle">Have a project in mind? Let's build something extraordinary together.
-                    </p>
-                    <div class="underline"></div>
-                </div>
-
-                <div class="contact-wrapper">
-                    <!-- Left: Contact Info -->
-                    <div class="contact-info scroll-reveal">
-                        <div class="contact-card">
-                            <i class="fa-solid fa-envelope"></i>
-                            <div class="card-content">
-                                <span>Email Me</span>
-                                <a href="mailto:am7405782@gmail.com">am7405782@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="card-content">
-                                <span>Call Me</span>
-                                <a href="tel:+201010657674">+20 1010657674</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <div class="card-content">
-                                <span>Location</span>
-                                <p>Cairo, Egypt | Remote Worldwide</p>
-                            </div>
-                        </div>
-
-                        <div class="social-box">
-                            <h3>Follow My Journey</h3>
-                            <div class="social-pills">
-                                <a href="https://www.linkedin.com/in/ahmed-mohamed-aa1463352" target="_blank"
-                                    class="pill link">
-                                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-                                </a>
-                                <a href="https://github.com/am7405782" target="_blank" class="pill github">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
-                                <a href="https://wa.me/201010657674" target="_blank" class="pill whatsapp">
-                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Quick Connect Form / CTA -->
-                    <div class="contact-action scroll-reveal">
-                        <div class="action-card">
-                            <h3>Let's collaborate on your next big thing.</h3>
-                            <p>I'm currently available for freelance projects and full-time remote roles.</p>
-
-                            <div class="action-buttons">
-                                <a href="mailto:am7405782@gmail.com" class="btn btn-primary main-cta">
-                                    Start a Project <i class="fa-solid fa-paper-plane"></i>
-                                </a>
-                                <a href="YOUR_CV_LINK" target="_blank" class="btn btn-outline">
-                                    Download CV <i class="fa-solid fa-download"></i>
-                                </a>
-                            </div>
-
-                            <div class="badge-row">
-                                <div class="mini-badge">
-                                    <i class="fa-solid fa-bolt"></i>
-                                    <span>Fast Response</span>
-                                </div>
-                                <div class="mini-badge">
-                                    <i class="fa-solid fa-shield-halved"></i>
-                                    <span>Quality Guaranteed</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Professional Portfolio. All rights reserved.</p>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="status" data-intro><span class="status-dot" aria-hidden="true"></span><span data-i18n="status">Available for freelance and remote roles</span></p>
+        <h1 class="name" aria-label="Ahmed Mohamed" data-i18n-aria="name.aria">
+          <span class="line" aria-hidden="true"><span data-intro data-i18n="name.first">Ahmed</span></span>
+          <span class="line" aria-hidden="true"><span data-intro data-i18n="name.last">Mohamed</span></span>
+        </h1>
+        <p class="role" data-intro data-i18n="role">Senior <span class="mark" data-sweep>Flutter</span> Developer</p>
+        <p class="pitch" data-intro data-i18n="pitch">I build Flutter apps for iOS and Android, with a focus on real-time and live video. <span data-count="apps">12</span> of them are live on the App Store and Google Play, and I use AI agents (Claude Code) to ship faster across mobile, web and backend.</p>
+        <ul class="facts-inline" data-intro>
+          <li><span class="ico"><i class="fa-solid fa-briefcase"></i></span><span data-i18n="fact.years">4+ years shipping</span></li>
+          <li><span class="ico"><i class="fa-solid fa-layer-group"></i></span><span data-i18n="fact.arch">Clean Architecture, BLoC, Riverpod</span></li>
+          <li><span class="ico"><i class="fa-solid fa-location-dot"></i></span><span data-i18n="fact.city">Cairo, Egypt</span></li>
+        </ul>
+        <div class="hero-actions" data-intro>
+          <a href="#work" class="btn btn-primary"><span data-i18n="seeWork">See my work</span> <span class="ico ico-go"><i class="fa-solid fa-arrow-right"></i></span></a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hire">Hire me</a>
+          <div class="socials">
+            <a class="icon-btn" href="https://www.linkedin.com/in/ahmed-mohamed-aa1463352" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="ico"><i class="fa-brands fa-linkedin-in"></i></span></a>
+            <a class="icon-btn" href="https://github.com/am7405782" target="_blank" rel="noopener" aria-label="GitHub"><span class="ico"><i class="fa-brands fa-github"></i></span></a>
+            <a class="icon-btn" href="https://wa.me/201010657674" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="ico"><i class="fa-brands fa-whatsapp"></i></span></a>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js?v=1.1"></script>
+      <div class="hero-visual">
+        <div class="slab" aria-hidden="true" data-intro></div>
+        <div class="phone" data-intro>
+          <div class="phone-screen">
+            <span class="island" aria-hidden="true"></span>
+            <div class="phone-bar" aria-hidden="true"><span>9:41</span><span class="glyphs"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+            <img src="img/portrait.jpg" alt="Ahmed Mohamed in a dark suit and tie, smiling, on a garden terrace" width="900" height="1200" fetchpriority="high">
+          </div>
+        </div>
+        <ol class="notifs" id="notifs" aria-label="Apps I have shipped" data-i18n-aria="notifs.aria" data-intro></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-label="Apps on the stores" data-i18n-aria="shelf.aria">
+    <p class="shelf-label" data-i18n="shelf.label"><strong>On the stores</strong>apps I built and shipped</p>
+    <div class="marquee"><ul class="marquee-track" id="shelf"></ul></div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="work-title" data-i18n="work.title">Selected work</h2>
+        <p class="lede" data-i18n="work.lede">Live commerce, HR, health, logistics, education and community apps. Open any project for its screens, features and the stack behind it.</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects" data-i18n-aria="filters.aria">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">All <span class="count" data-count="all"></span></button>
+        <button class="filter" type="button" data-filter="live" aria-pressed="false" data-i18n="filter.live">On the stores <span class="count" data-count="live"></span></button>
+        <button class="filter" type="button" data-filter="internal" aria-pressed="false" data-i18n="filter.internal">Internal <span class="count" data-count="internal"></span></button>
+        <span class="filter-pill" id="filter-pill" aria-hidden="true"></span>
+      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title" style="padding-top: 0">
+    <div class="wrap about-grid">
+      <h2 class="h2 about-title" id="about-title" data-i18n="about.title">From the first screen to the store listing.</h2>
+      <div>
+        <p class="statement" id="statement" data-i18n="about.statement">Flutter Developer with 4+ years of experience shipping 12+ production apps on Google Play and the App Store, across live commerce, HR, telemedicine, on-demand services and logistics. I specialize in real-time products: live video with Agora, live chat over SignalR and WebSockets, and offline-first sync, built on Clean Architecture with Riverpod and BLoC/Cubit.</p>
+        <p class="bio-more" data-i18n="about.more">I own features end to end, from concept to store release, and work across the stack with Next.js web portals and Laravel and .NET backends. Equally comfortable working solo or in a team, I care about clean, tested code and fast, intuitive experiences in Arabic and English.</p>
+        <dl class="facts">
+          <div><dt data-i18n="facts.based">Based in</dt><dd data-i18n="facts.basedV">Egypt. Open to remote</dd></div>
+          <div><dt data-i18n="facts.exp">Experience</dt><dd data-i18n="facts.expV">4+ years, <span data-count="apps">12</span>+ apps live</dd></div>
+          <div><dt data-i18n="facts.spec">Specialization</dt><dd data-i18n="facts.specV">Flutter, real-time and live video apps</dd></div>
+          <div><dt data-i18n="facts.approach">Approach</dt><dd data-i18n="facts.approachV">Clean Architecture, Agile and best practices</dd></div>
+        </dl>
+        <ul class="principles">
+          <li class="principle">
+            <span class="ico-wrap"><span class="ico"><i class="fa-solid fa-rocket"></i></span></span>
+            <div><h3 data-i18n="pr.impact">Proven impact</h3><p data-i18n="pr.impactP">Delivered <span data-count="apps">12</span>+ production apps with scalable architecture and strong performance.</p></div>
+          </li>
+          <li class="principle">
+            <span class="ico-wrap"><span class="ico"><i class="fa-solid fa-video"></i></span></span>
+            <div><h3 data-i18n="pr.rt">Real-time and live video</h3><p data-i18n="pr.rtP">Live streaming with Agora, real-time chat over SignalR and offline-first sync on iOS and Android.</p></div>
+          </li>
+          <li class="principle">
+            <span class="ico-wrap"><span class="ico"><i class="fa-solid fa-cubes"></i></span></span>
+            <div><h3 data-i18n="pr.arch">Scalable architecture</h3><p data-i18n="pr.archP">Applying Clean Architecture with Riverpod and BLoC, and modular monorepos for long-term maintainability.</p></div>
+          </li>
+          <li class="principle">
+            <span class="ico-wrap"><span class="ico"><i class="fa-solid fa-user-group"></i></span></span>
+            <div><h3 data-i18n="pr.lead">Leadership and ownership</h3><p data-i18n="pr.leadP">Leading features end to end, mentoring developers, and driving code quality standards.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ai" id="ai" aria-labelledby="ai-title">
+    <div class="wrap">
+      <div class="section-head ai-head">
+        <h2 class="h2" id="ai-title" data-i18n="ai.title">AI-augmented engineering</h2>
+        <p class="lede" data-i18n="ai.lede">Beyond Flutter: I build with AI agents across mobile, web, backend and QA — with guardrails that keep the output honest.</p>
+      </div>
+      <ul class="ai-list">
+        <li class="ai-item">
+          <span class="ai-ico" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+          <h3 data-i18n="ai.1">Custom Claude Code Skills</h3>
+          <p data-i18n="ai.1p">Wrote reusable agent skills — a Flutter Architect for architecture reviews, Riverpod/BLoC audits and tests, and a Flutter Localization skill for Arabic, RTL and Saudi formats — with evals to measure them.</p>
+        </li>
+        <li class="ai-item">
+          <span class="ai-ico" aria-hidden="true"><i class="fa-solid fa-robot"></i></span>
+          <h3 data-i18n="ai.2">Multi-agent End-to-End QA</h3>
+          <p data-i18n="ai.2p">Ran parallel AI agents through 17 end-to-end scenarios on an emulator and a real phone, in an isolated harness with its own database clone and server clock — then had an independent agent fact-check the reports against the evidence.</p>
+        </li>
+        <li class="ai-item">
+          <span class="ai-ico" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+          <h3 data-i18n="ai.3">AI-built Knowledge Base</h3>
+          <p data-i18n="ai.3p">Documented an inherited HR codebase with AI: 70+ docs covering 40 features, 68 database tables and the full mobile API, plus QA handover guides and audit workflows.</p>
+        </li>
+        <li class="ai-item">
+          <span class="ai-ico" aria-hidden="true"><i class="fa-solid fa-masks-theater"></i></span>
+          <h3 data-i18n="ai.4">Live Regression with Playwright</h3>
+          <p data-i18n="ai.4p">Built a Playwright suite that drives the live-shopping flows on buyer and seller web, with screenshots and logs as evidence for every QA round and every bug fixed.</p>
+        </li>
+        <li class="ai-item">
+          <span class="ai-ico" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+          <h3 data-i18n="ai.5">Guardrails, Not Vibes</h3>
+          <p data-i18n="ai.5p">Ship inside an AI-first monorepo where engineering rules live in CLAUDE.md and are enforced by CI guards and a local pre-push gate before anything merges.</p>
+        </li>
+        <li class="ai-item">
+          <span class="ai-ico" aria-hidden="true"><i class="fa-solid fa-gears"></i></span>
+          <h3 data-i18n="ai.6">Tooling for Parallel Agents</h3>
+          <p data-i18n="ai.6p">Built a machine-wide job queue so several AI coding sessions share one 8GB laptop: heavy builds and tests run one at a time by priority, and dev servers are shared.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="toolkit" aria-labelledby="toolkit-title" style="padding-top: 0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="toolkit-title" data-i18n="tk.title">Toolkit</h2>
+        <p class="lede" data-i18n="tk.lede">The languages, patterns and services I use to build apps that stay fast and easy to maintain.</p>
+      </div>
+      <div class="bento">
+        <article class="tk-panel is-wide">
+          <div class="tk-head"><span class="tk-badge" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span><h3 data-i18n="tk.mobile">Mobile development</h3><span class="tk-count" data-i18n="tk.n7">7 tools</span></div>
+          <p class="tk-note" data-i18n="tk.mobileN">One Flutter codebase for iOS and Android.</p>
+          <div class="core">
+            <div class="core-tile"><span class="wm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></span><span data-i18n="tk.expert">Expert</span><b>Flutter</b></div>
+            <div class="core-tile"><span class="wm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M4.105 4.105S9.158 1.58 11.684.316a3.079 3.079 0 0 1 1.481-.315c.766.047 1.677.788 1.677.788L24 9.948v9.789h-4.263V24H9.789l-9-9C.303 14.5 0 13.795 0 13.105c0-.319.18-.818.316-1.105l3.789-7.895zm.679.679v11.787c.002.543.021 1.024.498 1.508L10.204 23h8.533v-4.263L4.784 4.784zm12.055-.678c-.899-.896-1.809-1.78-2.74-2.643-.302-.267-.567-.468-1.07-.462-.37.014-.87.195-.87.195L6.341 4.105l10.498.001z"/></svg></span><span data-i18n="tk.advanced">Advanced</span><b>Dart</b></div>
+          </div>
+          <ul class="pills">
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i></span>BLoC / Cubit</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-water" aria-hidden="true"></i></span>Riverpod &amp; GoRouter</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span><span data-i18n="tk.perf">Performance tuning</span></li>
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 0 0-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 0 0-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 0 0-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z"/></svg></span>Android<small data-i18n="tk.integration">Integration</small></li>
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span>iOS<small data-i18n="tk.integration">Integration</small></li>
+          </ul>
+        </article>
+        <article class="tk-panel is-narrow">
+          <div class="tk-head"><span class="tk-badge" aria-hidden="true"><i class="fa-solid fa-cubes"></i></span><h3 data-i18n="tk.arch">Architecture &amp; real-time</h3><span class="tk-count" data-i18n="tk.n6">6 tools</span></div>
+          <p class="tk-note" data-i18n="tk.archN">Structure that stays easy to change, plus live video and chat.</p>
+          <ul class="pills">
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>Clean Architecture</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i></span><span data-i18n="tk.modular">Modular design</span></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span><span data-i18n="tk.state">State management</span></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span><span data-i18n="tk.quality">Code quality</span></li>
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.4393 11.6804a1.351 1.351 0 1 1 1.3496-1.351 1.3523 1.3523 0 0 1-1.3496 1.351m0-3.8006a2.4496 2.4496 0 1 0 2.4495 2.4496 2.4537 2.4537 0 0 0-2.4495-2.4496m4.0693.631-.0301.0301-.033.0315-.022-.0397-.0191-.033a1.17 1.17 0 0 0-.8695-.6034l-.092-.0178v4.9019l.092-.0123a1.1383 1.1383 0 0 0 1.008-1.1536v-1.285a1.362 1.362 0 0 1 1.211-1.3428l.0728-.0082V7.8812l-.0878.0096a2.086 2.086 0 0 0-1.2344.6227M2.4477 11.6817a1.351 1.351 0 1 1 1.351-1.3509 1.3523 1.3523 0 0 1-1.351 1.351m1.5731-3.3192-.0206.0274-.0205.0275-.0275-.0206-.026-.0206a2.4496 2.4496 0 1 0-1.4785 4.404 2.4235 2.4235 0 0 0 1.4785-.4978l.026-.0192.0275-.022.0204.0289.0206.0274a1.1685 1.1685 0 0 0 .786.4718l.0905.0124v-4.902l-.0905.0124a1.17 1.17 0 0 0-.786.4704m17.5298 3.3191a1.351 1.351 0 1 1 1.3523-1.3509 1.3523 1.3523 0 0 1-1.351 1.351m2.3577-3.7896a1.1754 1.1754 0 0 0-.7872.4704l-.0192.026-.0206.029-.0274-.0207-.026-.0206a2.4496 2.4496 0 1 0-1.4786 4.4014 2.4235 2.4235 0 0 0 1.4785-.498l.026-.0191.0275-.022.0206.0289.0192.0274a1.174 1.174 0 0 0 .7872.4718L24 12.779V7.8798ZM7.9778 8.9785a1.351 1.351 0 1 1-1.3524 1.351 1.3523 1.3523 0 0 1 1.355-1.351M9.5099 12.24a2.444 2.444 0 0 0 .5006-3.2835 1.9775 1.9775 0 0 0-.1125-.1523 1.1877 1.1877 0 0 0 .524-.8325l.0137-.0919H7.9683A2.4482 2.4482 0 0 0 6.4444 12.24a2.4427 2.4427 0 0 0-.2935.2743l.7461.823a1.351 1.351 0 1 1 1.7831 1.9613l.7475.8229a2.4469 2.4469 0 0 0 .07-3.876"/></svg></span>Agora<small>Video, RTC</small></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i></span>SignalR &amp; WebSockets</li>
+          </ul>
+        </article>
+        <article class="tk-panel is-narrow">
+          <div class="tk-head"><span class="tk-badge" aria-hidden="true"><i class="fa-solid fa-cloud"></i></span><h3 data-i18n="tk.backend">Backend &amp; web</h3><span class="tk-count" data-i18n="tk.n6">6 tools</span></div>
+          <p class="tk-note" data-i18n="tk.backendN">APIs, data and the web portals around the apps.</p>
+          <ul class="pills">
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.455 8.369c-.538-.748-1.778-2.285-3.681-4.569-.826-.991-1.535-1.832-1.884-2.245a146 146 0 0 0-.488-.576l-.207-.245-.113-.133-.022-.032-.01-.005L12.57 0l-.609.488c-1.555 1.246-2.828 2.851-3.681 4.64-.523 1.064-.864 2.105-1.043 3.176-.047.241-.088.489-.121.738-.209-.017-.421-.028-.632-.033-.018-.001-.035-.002-.059-.003a7.46 7.46 0 0 0-2.28.274l-.317.089-.163.286c-.765 1.342-1.198 2.869-1.252 4.416-.07 2.01.477 3.954 1.583 5.625 1.082 1.633 2.61 2.882 4.42 3.611l.236.095.071.025.003-.001a9.59 9.59 0 0 0 2.941.568q.171.006.342.006c1.273 0 2.513-.249 3.69-.742l.008.004.313-.145a9.63 9.63 0 0 0 3.927-3.335c1.01-1.49 1.577-3.234 1.641-5.042.075-2.161-.643-4.304-2.133-6.371m-7.083 6.695c.328 1.244.264 2.44-.191 3.558-1.135-1.12-1.967-2.352-2.475-3.665-.543-1.404-.87-2.74-.974-3.975.48.157.922.366 1.315.622 1.132.737 1.914 1.902 2.325 3.461zm.207 6.022c.482.368.99.712 1.513 1.028-.771.21-1.565.302-2.369.273a8 8 0 0 1-.373-.022c.458-.394.869-.823 1.228-1.279zm1.347-6.431c-.516-1.957-1.527-3.437-3.002-4.398-.647-.421-1.385-.741-2.194-.95.011-.134.026-.268.043-.4.014-.113.03-.216.046-.313.133-.689.332-1.37.589-2.025.099-.25.206-.499.321-.74l.004-.008c.177-.358.376-.719.61-1.105l.092-.152-.003-.001c.544-.851 1.197-1.627 1.942-2.311l.288.341c.672.796 1.304 1.548 1.878 2.237 1.291 1.549 2.966 3.583 3.612 4.48 1.277 1.771 1.893 3.579 1.83 5.375-.049 1.395-.461 2.755-1.195 3.933-.694 1.116-1.661 2.05-2.8 2.708-.636-.318-1.559-.839-2.539-1.599.79-1.575.952-3.28.479-5.072zm-2.575 5.397c-.725.939-1.587 1.55-2.09 1.856-.081-.029-.163-.06-.243-.093l-.065-.026c-1.49-.616-2.747-1.656-3.635-3.01-.907-1.384-1.356-2.993-1.298-4.653.041-1.19.338-2.327.882-3.379.316-.07.638-.114.96-.131l.084-.002c.162-.003.324-.003.478 0 .227.011.454.035.677.07.073 1.513.445 3.145 1.105 4.852.637 1.644 1.694 3.162 3.144 4.515z"/></svg></span>Firebase<small>Auth, Firestore, FCM</small></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-plug" aria-hidden="true"></i></span>REST APIs</li>
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.19 2.38a9.344 9.344 0 0 0-9.234 6.893c.053-.02-.055.013 0 0-3.875 2.551-3.922 8.11-.247 10.941l.006-.007-.007.03a6.717 6.717 0 0 0 4.077 1.356h5.173l.03.03h5.192c6.687.053 9.376-8.605 3.835-12.35a9.365 9.365 0 0 0-2.821-4.552l-.043.043.006-.05A9.344 9.344 0 0 0 12.19 2.38zm-.358 4.146c1.244-.04 2.518.368 3.486 1.15a5.186 5.186 0 0 1 1.862 4.078v.518c3.53-.07 3.53 5.262 0 5.193h-5.193l-.008.009v-.04H6.785a2.59 2.59 0 0 1-1.067-.23h.001a2.597 2.597 0 1 1 3.437-3.437l3.013-3.012A6.747 6.747 0 0 0 8.11 8.24c.018-.01.04-.026.054-.023a5.186 5.186 0 0 1 3.67-1.69z"/></svg></span>Google Cloud</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-database" aria-hidden="true"></i></span>SQL / NoSQL</li>
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"/></svg></span>Laravel<small>PHP</small></li>
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"/></svg></span>Next.js &amp; TypeScript</li>
+          </ul>
+        </article>
+        <article class="tk-panel is-wide">
+          <div class="tk-head"><span class="tk-badge" aria-hidden="true"><i class="fa-solid fa-robot"></i></span><h3 data-i18n="tk.ai">AI-assisted development</h3><span class="tk-count" data-i18n="tk.n6">6 tools</span></div>
+          <p class="tk-note" data-i18n="tk.aiN">Agents, skills and guardrails that speed up delivery.</p>
+          <ul class="pills">
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg></span>Claude Code</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span><span data-i18n="tk.skills">Custom agent skills</span></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-robot" aria-hidden="true"></i></span><span data-i18n="tk.multi">Multi-agent workflows</span></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span><span data-i18n="tk.review">AI code review &amp; audits</span></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span><span data-i18n="tk.docs">AI-built documentation</span></li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span><span data-i18n="tk.gates">CI guards &amp; quality gates</span></li>
+          </ul>
+        </article>
+        <article class="tk-panel is-full">
+          <div class="tk-head"><span class="tk-badge" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></span><h3 data-i18n="tk.tools">Tools &amp; workflow</h3><span class="tk-count" data-i18n="tk.n5">5 tools</span></div>
+          <p class="tk-note" data-i18n="tk.toolsN">How the work ships and stays organized.</p>
+          <ul class="pills">
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg></span>Git</li>
+            <li class="pill"><span class="ti-wrap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>GitHub</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-infinity" aria-hidden="true"></i></span>CI/CD</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i></span>Agile / Scrum</li>
+            <li class="pill"><span class="ti-wrap"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span><span data-i18n="tk.testing">Automated testing</span><small>Unit, Widget, E2E</small></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact-title" id="contact-title" aria-label="Have an app in mind? Let’s ship it." data-i18n-aria="contact.aria">
+        <span class="line" aria-hidden="true"><span data-i18n="contact.l1">Have an app</span></span>
+        <span class="line" aria-hidden="true"><span data-i18n="contact.l2">in mind?</span></span>
+        <span class="line" aria-hidden="true"><span data-i18n="contact.l3">Let’s ship it.</span></span>
+      </h2>
+      <p class="contact-intro" data-i18n="contact.intro">I’m open to freelance projects and full-time remote roles. Tell me what you’re building and I’ll get back to you quickly.</p>
+      <div class="contact-grid">
+        <div>
+          <p class="email-label" data-i18n="contact.email">Email</p>
+          <div class="email-row">
+            <a class="email" href="mailto:am7405782@gmail.com" id="email" dir="ltr">am7405782@gmail.com</a>
+            <button class="copy-btn" type="button" id="copy-email">
+              <span class="ico ico-copy"><i class="fa-regular fa-copy"></i></span>
+              <span class="ico ico-done"><i class="fa-solid fa-check"></i></span>
+              <span class="copy-label" data-i18n="copy">Copy</span>
+            </button>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-ink" href="mailto:am7405782@gmail.com"><span data-i18n="contact.start">Start a project</span> <span class="ico ico-go"><i class="fa-solid fa-arrow-right"></i></span></a>
+            <a class="btn btn-line" href="https://wa.me/201010657674" target="_blank" rel="noopener"><span class="ico"><i class="fa-brands fa-whatsapp"></i></span> <span data-i18n="contact.wa">Message on WhatsApp</span></a>
+          </div>
+        </div>
+        <ul class="links-list">
+          <li><a class="link-row" href="https://www.linkedin.com/in/ahmed-mohamed-aa1463352" target="_blank" rel="noopener"><span class="ico"><i class="fa-brands fa-linkedin-in"></i></span><span>LinkedIn</span><span class="val">ahmed-mohamed</span><span class="ico go"><i class="fa-solid fa-arrow-up-right"></i></span></a></li>
+          <li><a class="link-row" href="https://github.com/am7405782" target="_blank" rel="noopener"><span class="ico"><i class="fa-brands fa-github"></i></span><span>GitHub</span><span class="val">am7405782</span><span class="ico go"><i class="fa-solid fa-arrow-up-right"></i></span></a></li>
+          <li><a class="link-row" href="tel:+201010657674"><span class="ico"><i class="fa-solid fa-phone"></i></span><span data-i18n="contact.phone">Phone</span><span class="val" dir="ltr">+20 101 065 7674</span><span class="ico go"><i class="fa-solid fa-arrow-up-right"></i></span></a></li>
+          <li><div class="link-row"><span class="ico"><i class="fa-solid fa-location-dot"></i></span><span data-i18n="fact.city">Cairo, Egypt</span><span class="val" data-i18n="contact.remote">Remote worldwide</span><span></span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span data-i18n="footer">© <span id="year">2026</span> Ahmed Mohamed. Flutter developer in Cairo.</span>
+    <a href="#top" class="to-top"><span data-i18n="toTop">Back to top</span> <span class="ico"><i class="fa-solid fa-arrow-up"></i></span></a>
+  </div>
+</footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-scroll" id="sheet-scroll"></div>
+</dialog>
+
+    <script src="script.js?v=11"></script>
 </body>
 
 </html>
